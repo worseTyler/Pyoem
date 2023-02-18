@@ -34,6 +34,7 @@ class DeclarationParser(BlockParser):
         super().__init__(block)
     
     def parse(self) -> ParsedBlock:
+        print(self.block)
         if not self.block[-1].startswith('-'): 
             print("Static Definition did not have a -Author at the end")
             return None

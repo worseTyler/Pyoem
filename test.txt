@@ -1,6 +1,14 @@
-alphabet,
-numeral,
+alphabet
+numeral
 -Tyler
 
-Poem Start
-This is my peom.
+
+is one three
+-Collin
+
+
+'alphabet'
+-Anna
+
+hate myself
+-Nickeloeus
