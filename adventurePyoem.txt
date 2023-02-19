@@ -24,22 +24,22 @@
 'A sliver of light creeps into the box-like room through a tiny crack in the ceiling.'
 -room1Des
 
-'The second room'
+'This dingy chamber smells of dust and age. You appear to be deep, deep underground.'
 -room2Des
 
-'The third room'
+'This long hallway slants sharply up into a steep climb, and a small trickle of water seeps down from somewhere above.'
 -room3Des
 
-'strange painting',
-'sleeping mat',
+'A mysterious unknown symbol adorns the far wall, unlike anything you've seen. It hurts to stare at.',
+'In one corner, a dirty straw mat marks where you woke up in this strange place.',
 -room2Items
 
-'locked door',
-'moss-covered wall',
+'At the end of the hall sturdy iron door, strongly secured to the stone walls, blocks your passage. It is clearly locked.',
+'The dripping water has allowed moss to spread along one wall of this room. The smell of it makes you woozy.',
 -room3Items
 
-'unlocked door',
-'moss-covered wall',
+'At the end of the hall the sturdy iron door lies unlocked and slightly ajar.',
+'The dripping water has allowed moss to spread along one wall of this room. The smell of it makes you woozy.',
 -room3ItemsUnlocked
 
 HANDLE MOVEMENT
