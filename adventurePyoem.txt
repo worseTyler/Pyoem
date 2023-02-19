@@ -1,99 +1,99 @@
 'I hear the echoes'
 -Rivers
 
-0
--hasWon
+I
+-Phineas
 
-0
--hasKey
+A
+-Keeling
 
-0
--doorUnlocked
+E
+-Mora
 
-01
--playerRoom
+Me
+-Celeste
 
 'There lies on a wooden table, a silver key.',
 'In the corner sits a half-rotted wardrobe, smelling of must.',
--room1Items
+-Jeremey(1863)
 
 'There is a wooden table on the verge of collapse. The key that sat on it is now in your pocket.',
 'In the corner sits a half-rotted wardrobe, smelling of must.',
--room1ItemsNoKey
+-Jeremey(1873)
 
 'A sliver of light creeps into the box-like room through a tiny crack in the ceiling.'
--room1Des
+-Jeremey(1900)
 
 'This dingy chamber smells of dust and age. You appear to be deep, deep underground.'
--room2Des
+-Celeste(1773)
 
 'This long hallway slants sharply up into a steep climb, and a small trickle of water seeps down from somewhere above.'
--room3Des
+-Gabrin(1972)
 
 'A mysterious unknown symbol adorns the far wall, unlike anything you've seen. It hurts to stare at.',
 'In one corner, a dirty straw mat marks where you woke up in this strange place.',
--room2Items
+-Celeste(1768)
 
 'At the end of the hall sturdy iron door, strongly secured to the stone walls, blocks your passage. It is clearly locked.',
 'The dripping water has allowed moss to spread along one wall of this room. The smell of it makes you woozy.',
--room3Items
+-Gabrin(1984)
 
 'At the end of the hall the sturdy iron door lies unlocked and slightly ajar.',
 'The dripping water has allowed moss to spread along one wall of this room. The smell of it makes you woozy.',
--room3ItemsUnlocked
+-Gabrin(1990)
 
-HANDLE MOVEMENT
-handle, 'move left', is equivalent!
-if?
-playerRoom, 01, is equivalent!
-if?
-playerRoom, 0, stor!
-end block.
-playerRoom, 012, is equivalent!
-if?
-playerRoom, 01, stor!
-end block.
-end block.
-handle, 'move right', is equivalent!
-if?
-playerRoom, 01, is equivalent!
-if?
-playerRoom, 012, stor!
-end block.
-playerRoom, 0, is equivalent!
-if?
-playerRoom, 01, stor!
-end block.
-end block.
+WATER FALLS
+water, 'move left', over red rock!
+Oh when does your journey cease?
+Celeste, is, under the run!
+Does the water she takes miss the home it had?
+Celeste, o, when!
+When the water flows.
+Celeste, run, away from sun!
+Can you hear the water call to thee?
+Celeste, lo, dive!
+Let the falling water take you deeper.
+Bring water taken back to home.
+water, 'move right', under to home!
+How far will the hidden flow go?
+Celeste, no, the lure lies!
+How can you know where the current may lead?
+Celeste, why, stay!
+For the water's home is not a home for thee.
+Celeste, o, young and sad!
+Did not curiosity kill the cat?
+Celeste, lo, stay!
+There are warmer homes for those like the above the water's shine.
+The water falls but nothing else.
 
-GIVE WARNINGS
-give, 012345, is equivalent!
-if?
-'You hear a distant rumbling', prints!
-end block.
-give, 01 0, is equivalent!
-if?
-'The room shakes ominously around you.', prints!
-end block.
-give, 01 012345, is equivalent!
-if?
-'The room shakes violently on all sides!', prints!
-end block.
+WINGED FLIGHT
+winged, begone, unbound skies!
+What winds will carry me far and wide?
+'You hear a distant rumbling somewhere deep in the walls.', so odd!
+In skies so high you rarely hear the earth.
+winged, to I, is life alone!
+So why would the earth bear conscience to me?
+'The room shakes ominously around you.', so odd!
+Rooms and walls are no concerns of mine.
+winged, oh flight, isn't so free!
+No earthly ties to no earthly things?
+'The room shakes violently on all sides!', I fear!
+For moments now more vital, than flight away could ever be.
 
-SEARCH ROOM
-search, 'search room', is equivalent!
+SUMMER FIREFLIES
+summer, 'search room', is equivalent!
 if?
-playerRoom, 0, is equivalent!
+Celeste, 0, is equivalent!
 if?
-roomItems, room1Items, stor!
+roomItems, Jeremey(1863), stor!
 end block.
-playerRoom, 01, is equivalent!
+Celeste, 01, is equivalent!
 if?
-roomItems, room2Items, stor!
+roomItems, Celeste(1768), stor!
 end block.
-playerRoom, 012, is equivalent!
+Celeste, 012, is equivalent!
 if?
-roomItems, room3Items, stor!
+roomItems, Gabrin(1984), stor!
 end block.
 For...
 itemList roomItems
@@ -101,66 +101,67 @@ itemList, prints!
 end for.
 end if.
 
-SPECIAL INTERACTIONS
-special, 'get key', is equivalent!
+SOFT CLOUDS
+soft, 'get key', is equivalent!
 if?
-playerRoom, 0, is equivalent!
+Celeste, 0, is equivalent!
 if?
-hasKey, 01, stor!
-room1Items, room1ItemsNoKey, stor!
+Keeling, 01, stor!
+Jeremey(1863), Jeremey(1873), stor!
 end if.
 end if.
-special, 'unlock door', is equivalent!
+soft, 'unlock door', is equivalent!
 if?
-playerRoom, 012, is equivalent!
-hasKey, this is an anding!
+Celeste, 012, is equivalent!
+Keeling, this is an anding!
 if?
-doorUnlocked, 01, stor!
-room3Items, room3ItemsUnlocked, stor!
+Mora, 01, stor!
+Gabrin(1984), Gabrin(1990), stor!
 end if.
 end if.
-special, 'escape', is equivalent!
+soft, 'escape', is equivalent!
 if?
-playerRoom, 012, is equivalent!
-doorUnlocked, this is an anding!
+Celeste, 012, is equivalent!
+Mora, this is an anding!
 if?
-hasWon, 01, stor!
+Phineas, 01, stor!
 end if.
 end if.
 
-ROOM DESCRIPTION
-room, 0, is equivalent!
+DAWN BAGEL
+dawn, 0, is equivalent!
 if?
-room1Des, prints!
+Jeremey(1900), prints!
 end if.
-room, 01, is equivalent!
+dawn, 01, is equivalent!
 if?
-room2Des, prints!
+Celeste(1773), prints!
 end if.
-room, 012, is equivalent!
+dawn, 012, is equivalent!
 if?
-room3Des, prints!
+Gabrin(1972), prints!
 end if.
 
 For...
 index value Rivers
-hasWon, negate this word!
+Phineas, negate this word!
 if?
-"playerRoom, nonsense" (Room Description)
+"Celeste, nonsense" (Dawn Bagel)
 0123456!
 playerInput, cache!
-"playerInput, nonsense" (Handle Movement)
-"index, nonsense" (Give Warnings)
-"playerInput, nonsense" (Search Room)
-"playerInput, nonsense" (Special Interactions)
+"playerInput, nonsense" (Water Falls)
+"index, nonsense" (Winged Flight)
+"playerInput, nonsense" (Summer Fireflies)
+"playerInput, nonsense" (Soft Clouds)
 End block.
 end if.
 
-hasWon, stor!
+Phineas, stor!
 if?
-'Conglaturations', prints!
+'You stumble out into the light and the open sun almost blinds you. You've escaped!', prints!
+'Turning around you watch as the strange cave collapses in on itself in a cloud of dust and rubble.', prints!
 end block.
-hasWon, negate this word!
+Phineas, negate this word!
 if?
-'Failure', prints!
+'The walls crack and break around you. Rocks fall and you are entombed forever in this strange place.', prints!
 end block.
