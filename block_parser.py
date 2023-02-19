@@ -1,6 +1,4 @@
-
 from typing import List
-
 from util import Util
 
 class ParsedBlock():
@@ -10,13 +8,18 @@ class ParsedBlock():
     def execute(var_store: dict) -> dict:
         pass
 
-
-
 class BlockParser():
-    def __init__(self, block: List[str]) -> None:
-        self.block = block
+    def __init__(self) -> None:
+        pass
 
-    def parse(self) -> ParsedBlock:
+    def parse(self, block: List[str]) -> ParsedBlock:
+        pass
+
+class ExecutableBlockParser(BlockParser):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def parse(self, block: List[str]) -> ParsedBlock:
         pass
 
 class DeclarationParsedBlock(ParsedBlock):
@@ -25,24 +28,23 @@ class DeclarationParsedBlock(ParsedBlock):
         self.name = name
         super().__init__()
 
-    def execute(self, var_store: dict) -> dict:
+    def execute(self, var_store: dict) -> None:
         var_store[self.name] = self.value
-        return var_store
 
 class DeclarationParser(BlockParser):
-    def __init__(self, block: List[str]) -> None:
-        super().__init__(block)
+    def __init__(self) -> None:
+        super().__init__()
     
-    def parse(self) -> ParsedBlock:
-        print(self.block)
-        if not self.block[-1].startswith('-'): 
+    def parse(self, block: List[str]) -> ParsedBlock:
+        print(block)
+        if not block[-1].startswith('-'): 
             print("Static Definition did not have a -Author at the end")
             return None
 
-        name = self.block[-1].lstrip('- ')
+        name = block[-1].lstrip('- ')
 
         contents = []
-        for line in self.block[:-1]:
+        for line in block[:-1]:
             line = line.strip(',').strip(' ')
             if line.startswith("'") and line.endswith("'"):
                 # is string

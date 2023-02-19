@@ -31,14 +31,14 @@ class Pyoem():
 
     def parse_blocks(self):
         for block in self.blocks:
-            parser = DeclarationParser(block)
-            parsedBlock = parser.parse()
+            parser = DeclarationParser()
+            parsedBlock = parser.parse(block)
             if parsedBlock is not None:
                 self.parsed_blocks.append(parsedBlock)
 
     def execute_blocks(self):
         for parsedBlock in self.parsed_blocks:
-            self.var_store = parsedBlock.execute(self.var_store)
+            parsedBlock.execute(self.var_store)
 
     def printStore(self):
         print(self.var_store)
