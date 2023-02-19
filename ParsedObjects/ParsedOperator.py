@@ -10,18 +10,24 @@ class ParsedOperator(ParsedObject):
         self.operation_token = operation_token
         self.operands = operands
         self.operation_dict = {
-            3: Operations.store,
-            4: Operations.cache,
-            5: Operations.add,
-            6: Operations.sub,
-            7: Operations.mul,
-            8: Operations.div,
-            9: Operations.equals,
-            10: Operations.greater,
-            11: Operations.less,
-            12: Operations.negate,
-            13: Operations.op_and,
-            14: Operations.op_or
+            4: Operations.store,
+            5: Operations.cache,
+
+            6: Operations.op_print,
+            7: Operations.op_read,
+
+            8: Operations.add,
+            9: Operations.sub,
+            10: Operations.mul,
+            11: Operations.div,
+            12: Operations.mod,
+
+            13: Operations.equals,
+            14: Operations.greater,
+            15: Operations.less,
+            16: Operations.negate,
+            17: Operations.op_and,
+            18: Operations.op_or,
         }
     
     def execute(self, var_store: dict) -> None:

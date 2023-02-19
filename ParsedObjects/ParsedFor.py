@@ -18,6 +18,5 @@ class ParsedFor(ParsedObject):
             logic = copy.deepcopy(self.internal_logic)
 
             for parsed_object in logic:
-                print(var_store)
                 parsed_object.execute(var_store)
                 

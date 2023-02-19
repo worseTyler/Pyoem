@@ -42,7 +42,6 @@ class Pyoem():
                     currentBlock = []
             
             self.blocks.append(currentBlock)
-            print(self.blocks)
 
     def parse_blocks(self):
         for block in self.blocks:

@@ -12,7 +12,7 @@ class DeclarationParser(BlockParser):
     
     def parse(self, block: List[str]) -> ParsedBlock:
         if not block[-1].startswith('-'): 
-            print("Static Definition did not have a -Author at the end")
+            # This block is not a static declaration
             return None
 
         name = block[-1].lstrip('- ')
