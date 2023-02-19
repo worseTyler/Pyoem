@@ -2,6 +2,9 @@
 
 from BlockParsers.DeclarationParser import DeclarationParser
 from BlockParsers.ExecutableParser import ExecutableParser
+from LineParsers.ConditionalParser import ConditionalParser
+from LineParsers.ForParser import ForParser
+from LineParsers.OperatorParser import OperatorParser
 
 
 class Pyoem():
@@ -11,10 +14,15 @@ class Pyoem():
         self.raw_lines = []
         self.blocks = []
         self.parsed_blocks = []
+        self.line_parsers = [
+            OperatorParser(),
+            ConditionalParser(),
+            ForParser(),
+        ]
 
         self.block_parsers = [
-            DeclarationParser(),
-            ExecutableParser()
+            DeclarationParser(self.line_parsers),
+            ExecutableParser(self.line_parsers)
         ]
 
 

@@ -1,13 +1,14 @@
 from typing import List
 from BlockParsers.BlockParser import BlockParser
+from LineParsers.LineParser import LineParser
 from ParsedBlocks.DeclarationParsedBlock import DeclarationParsedBlock
 from ParsedBlocks.ParsedBlock import ParsedBlock
 from util import Util
 
 
 class DeclarationParser(BlockParser):
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, line_parsers: List[LineParser]) -> None:
+        super().__init__(line_parsers)
     
     def parse(self, block: List[str]) -> ParsedBlock:
         if not block[-1].startswith('-'): 

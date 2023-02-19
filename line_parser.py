@@ -1,3 +1,8 @@
+import copy
+from LineParsers.ConditionalParser import ConditionalParser
+from LineParsers.ForParser import ForParser
+
+
 if __name__ == "__main__":
     # opParser = OperatorParser()
     # args = [
@@ -16,42 +21,43 @@ if __name__ == "__main__":
     #         parsedOperator.execute(store)
     #         print(store)
 
-    def tests_operations():
-        tests = [
-            ("Collin, fish sto!", {'Collin': 3}), # store
-            ("fish cach!", {'last_value': 3}), # cache
-            ("five, one addss!", {'last_value': 5}), # add
-            ("five, one subsss!", {'last_value': 1}), # sub
-            ("12345, 123 1234567!", {'last_value': 8}), # mul
-            ("012345678, 01234 12345678!", {'last_value': 2}), # div
-            ("01234, 01235 123456789!", {'last_value': True}), # equals
-            ("01234, 01 123456789!", {'last_value': False}), # equals
-            ("Collin, fish 1234567890!", {'last_value': True}), # greater
-            ("fish, Collin  1234567890!", {'last_value': False}), # greater
-            ("Collin, fish 12345678901!", {'last_value': False}), # less
-            ("fish, Collin  12345678901!", {'last_value': True}), # less
-            # ("Collin, fish fiver!", {'last_value': 3}), # negate
-            # ("Collin, fish fiver!", {'last_value': 3}), # or
-            # ("Collin, fish fiver!", {'last_value': 3}), # and
-        ]
+    # def tests_operations():
+    #     tests = [
+    #         ("Collin, fish sto!", {'Collin': 3}), # store
+    #         ("fish cach!", {'last_value': 3}), # cache
+    #         ("five, one addss!", {'last_value': 5}), # add
+    #         ("five, one subsss!", {'last_value': 1}), # sub
+    #         ("12345, 123 1234567!", {'last_value': 8}), # mul
+    #         ("012345678, 01234 12345678!", {'last_value': 2}), # div
+    #         ("01234, 01235 123456789!", {'last_value': True}), # equals
+    #         ("01234, 01 123456789!", {'last_value': False}), # equals
+    #         ("Collin, fish 1234567890!", {'last_value': True}), # greater
+    #         ("fish, Collin  1234567890!", {'last_value': False}), # greater
+    #         ("Collin, fish 12345678901!", {'last_value': False}), # less
+    #         ("fish, Collin  12345678901!", {'last_value': True}), # less
+    #         # ("Collin, fish fiver!", {'last_value': 3}), # negate
+    #         # ("Collin, fish fiver!", {'last_value': 3}), # or
+    #         # ("Collin, fish fiver!", {'last_value': 3}), # and
+    #     ]
 
-        for test in tests:
-            opParser = OperatorParser()
-            parsedOperator = opParser.parse([test[0]])
-            if parsedOperator is not None:
-                expected = copy.deepcopy(test[1])
-                parsedOperator.execute(test[1])
+    #     for test in tests:
+    #         opParser = OperatorParser()
+    #         parsedOperator = opParser.parse([test[0]])
+    #         if parsedOperator is not None:
+    #             expected = copy.deepcopy(test[1])
+    #             parsedOperator.execute(test[1])
 
-                print("START")
-                print(test[1])
-                print(f"Result: {expected == test[1]}\n\n")
+    #             print("START")
+    #             print(test[1])
+    #             print(f"Result: {expected == test[1]}\n\n")
     
-    # tests_operations()
+    # # tests_operations()
 
     def tests_conditional():
             tests = [
                 (["Condition?", "result, fishy, yum!", "It can be anything."], {'last_value': True}, {'result': 4, 'last_value': True}), # true case
                 (["Condition?", "result, fishy, yum!", "It can be anything."], {'last_value': False}, {'last_value': False}), # false case
+                (["Condition?", "Condition?", "result, fishy, yum!", "It can be anything.", "But it isn't."], {'last_value': True}, {'last_value': True, 'result': 4}), # nested case
             ]
             
             for test in tests:
@@ -64,5 +70,23 @@ if __name__ == "__main__":
                     print("START")
                     print(test[1])
                     print(f"Result: {expected == test[1]}\n\n")
+
+    def tests_for():
+            tests = [
+                (["For...", "value list", "value, fiver!", "I wasn't listening."], {'last_value': 0, 'list': [1,2,3,4]}, {'last_value': 10, 'list': [1,2,3,4], 'value': 4}), # basic case   
+                (["For...", "index value list", "value, fiver!", "I wasn't listening."], {'last_value': 0, 'list': [1,2,3,4]}, {'last_value': 10, 'list': [1,2,3,4], 'value': 4, 'index': 3}), # index case
+                (["For...", "value list", "For...", "item list", "item, fiver!", "End block.", "value, fiver!", "I wasn't listening."], {'last_value': 0, 'list': [1,2,3,4]}, {'last_value': 50, 'list': [1,2,3,4], 'value': 4, 'item': 4}), # nested case              
+            ]
+            
+            for test in tests:
+                opParser = ForParser()
+                parsed_object = opParser.parse(test[0])
+                if parsed_object is not None:
+                    expected = copy.deepcopy(test[2])
+                    parsed_object.execute(test[1])
+
+                    print("START")
+                    print(test[1])
+                    print(f"Result: {expected == test[1]}\n\n")
         
-    tests_conditional()
+    tests_for()

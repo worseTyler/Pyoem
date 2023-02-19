@@ -6,5 +6,5 @@ class LineParser():
     def __init__(self) -> None:
         pass
 
-    def parse(self, block: List[str]) -> ParsedObject:
+    def parse(self, block: List[str], line_parsers: List) -> ParsedObject:
         pass

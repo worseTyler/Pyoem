@@ -8,7 +8,7 @@ class OperatorParser(LineParser):
     def __init__(self) -> None:
         super().__init__()
     
-    def parse(self, block: List[str]) -> ParsedObject:
+    def parse(self, block: List[str], line_parsers: List) -> ParsedObject:
         current_line = block[0]
         if not current_line.strip().endswith('!'):
             # this is not an operator
