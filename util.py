@@ -5,7 +5,7 @@ class Util():
         for word in words:
             if len(word) < 1:
                 continue
-            
+
             length = len(word) - 1
             if length > 9:
                 raise SyntaxError(f"Why did you use '{word}'... gross and long")
@@ -23,8 +23,6 @@ class Util():
             return operand.strip("'")
         else:
             num = Util.pyoem_str_to_num(operand)
-            print(operand)
-            print(num)
             return num 
             
         
