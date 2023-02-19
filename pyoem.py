@@ -35,6 +35,8 @@ class Pyoem():
                 self.raw_lines.append(line)
                 
                 if line != '':
+                    if not line.isupper():
+                        line = line.lower()
                     currentBlock.append(line)
                 
                 if line == '' and len(currentBlock) > 0:
