@@ -2,8 +2,10 @@
 
 from BlockParsers.DeclarationParser import DeclarationParser
 from BlockParsers.ExecutableParser import ExecutableParser
+from BlockParsers.FunctionParser import FunctionParser
 from LineParsers.ConditionalParser import ConditionalParser
 from LineParsers.ForParser import ForParser
+from LineParsers.FunctionCallParser import FunctionCallParser
 from LineParsers.OperatorParser import OperatorParser
 
 
@@ -18,11 +20,13 @@ class Pyoem():
             OperatorParser(),
             ConditionalParser(),
             ForParser(),
+            FunctionCallParser(),
         ]
 
         self.block_parsers = [
             DeclarationParser(self.line_parsers),
-            ExecutableParser(self.line_parsers)
+            FunctionParser(self.line_parsers),
+            ExecutableParser(self.line_parsers),
         ]
 
 

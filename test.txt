@@ -7,6 +7,9 @@ we walked,
 aquaphobic
 -Margo
 
+FUNCTION CALL
+function, call, a myriad!
+
 Once there was a boy...
 tall boy Collin
 What a strong young lad...
@@ -22,3 +25,6 @@ Nevermore.
 
 rose, desire!
 tulip, untold!
+
+"apples, oranges" (Function Call)
+hoorah!
