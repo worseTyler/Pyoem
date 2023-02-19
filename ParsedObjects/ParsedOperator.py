@@ -28,6 +28,8 @@ class ParsedOperator(ParsedObject):
             16: Operations.negate,
             17: Operations.op_and,
             18: Operations.op_or,
+
+            19: Operations.index,
         }
     
     def execute(self, var_store: dict) -> None:

@@ -16,7 +16,6 @@ class ParsedFunctionCall(ParsedObject):
             if len(self.parameters) < index:
                 break
             var_store[value.strip()] = Util.eval_operand(self.parameters[index], var_store)
-        print(var_store)
         executable_block = var_store[self.function_identifier.strip()]
         if not type(executable_block) == ExecutableParsedBlock:
             raise SyntaxError("The quoted material is irrelevant.")

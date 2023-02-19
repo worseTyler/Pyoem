@@ -1,0 +1,166 @@
+'I hear the echoes'
+-Rivers
+
+0
+-hasWon
+
+0
+-hasKey
+
+0
+-doorUnlocked
+
+01
+-playerRoom
+
+'There lies on a wooden table, a silver key.',
+'In the corner sits a half-rotted wardrobe, smelling of must.',
+-room1Items
+
+'There is a wooden table on the verge of collapse. The key that sat on it is now in your pocket.',
+'In the corner sits a half-rotted wardrobe, smelling of must.',
+-room1ItemsNoKey
+
+'A sliver of light creeps into the box-like room through a tiny crack in the ceiling.'
+-room1Des
+
+'The second room'
+-room2Des
+
+'The third room'
+-room3Des
+
+'strange painting',
+'sleeping mat',
+-room2Items
+
+'locked door',
+'moss-covered wall',
+-room3Items
+
+'unlocked door',
+'moss-covered wall',
+-room3ItemsUnlocked
+
+HANDLE MOVEMENT
+handle, 'move left', is equivalent!
+if?
+playerRoom, 01, is equivalent!
+if?
+playerRoom, 0, stor!
+end block.
+playerRoom, 012, is equivalent!
+if?
+playerRoom, 01, stor!
+end block.
+end block.
+handle, 'move right', is equivalent!
+if?
+playerRoom, 01, is equivalent!
+if?
+playerRoom, 012, stor!
+end block.
+playerRoom, 0, is equivalent!
+if?
+playerRoom, 01, stor!
+end block.
+end block.
+
+GIVE WARNINGS
+give, 012345, is equivalent!
+if?
+'You hear a distant rumbling', prints!
+end block.
+give, 01 0, is equivalent!
+if?
+'The room shakes ominously around you.', prints!
+end block.
+give, 01 012345, is equivalent!
+if?
+'The room shakes violently on all sides!', prints!
+end block.
+
+SEARCH ROOM
+search, 'search room', is equivalent!
+if?
+playerRoom, 0, is equivalent!
+if?
+roomItems, room1Items, stor!
+end block.
+playerRoom, 01, is equivalent!
+if?
+roomItems, room2Items, stor!
+end block.
+playerRoom, 012, is equivalent!
+if?
+roomItems, room3Items, stor!
+end block.
+For...
+itemList roomItems
+itemList, prints!
+end for.
+end if.
+
+SPECIAL INTERACTIONS
+special, 'get key', is equivalent!
+if?
+playerRoom, 0, is equivalent!
+if?
+hasKey, 01, stor!
+room1Items, room1ItemsNoKey, stor!
+end if.
+end if.
+special, 'unlock door', is equivalent!
+if?
+playerRoom, 012, is equivalent!
+hasKey, this is an anding!
+if?
+doorUnlocked, 01, stor!
+room3Items, room3ItemsUnlocked, stor!
+end if.
+end if.
+special, 'escape', is equivalent!
+if?
+playerRoom, 012, is equivalent!
+doorUnlocked, this is an anding!
+if?
+hasWon, 01, stor!
+end if.
+end if.
+
+ROOM DESCRIPTION
+room, 0, is equivalent!
+if?
+room1Des, prints!
+end if.
+room, 01, is equivalent!
+if?
+room2Des, prints!
+end if.
+room, 012, is equivalent!
+if?
+room3Des, prints!
+end if.
+
+For...
+index value Rivers
+hasWon, negate this word!
+if?
+"playerRoom, nonsense" (Room Description)
+0123456!
+playerInput, cache!
+"playerInput, nonsense" (Handle Movement)
+"index, nonsense" (Give Warnings)
+"playerInput, nonsense" (Search Room)
+"playerInput, nonsense" (Special Interactions)
+End block.
+end if.
+
+hasWon, stor!
+if?
+'Conglaturations', prints!
+end block.
+hasWon, negate this word!
+if?
+'Failure', prints!
+end block.

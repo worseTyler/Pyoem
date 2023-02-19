@@ -15,8 +15,7 @@ class Operations():
     def cache(operands: List[str], var_store: dict):
         if len(operands) != 1:
             raise SyntaxError("HOW DARE YOU")
-
-
+  
         var_store[operands[0].strip()] = var_store['last_value']
 
     def setup_operands(operands, var_store):
@@ -87,12 +86,8 @@ class Operations():
         var_store["last_value"] = operands[0] < operands[1]
 
     def negate(operands: List[str], var_store: dict):
-        if len(operands) != 1 and len(operands) != 2:
+        if len(operands) != 1:
             raise SyntaxError("HOW DARE YOU")
-        
-        if len(operands) == 0:
-            operands.append(operands[0])
-            operands[0] = "last_value"    
 
         operands[0] = Util.eval_operand(operands[0], var_store)
 
@@ -129,4 +124,15 @@ class Operations():
         if len(operands) == 0:
             operands.append('last_value')
 
-        var_store[operands[0]] = input(": ")
+        user_input = input(": ")
+        var_store[operands[0]] = user_input
+
+    def index(operands: List[str], var_store: dict):
+        if len(operands) not in [1,2]:
+            raise SyntaxError("HOW DARE YOU")
+        
+        if len(operands) == 1:
+            operands.insert('last_value', 0)
+
+        list_index = Util.eval_operand(operands[1], var_store)
+        var_store['last_value'] = var_store[operands[0].strip()][list_index]
