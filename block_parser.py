@@ -1,5 +1,5 @@
 from typing import List
-from line_parser import OperatorParser
+from line_parser import OperatorParser, ConditionalParser
 from util import Util
 
 class ParsedBlock():
@@ -28,7 +28,8 @@ class ExecutableParsedBlock(ParsedBlock):
 class ExecutableParser(BlockParser):
     def __init__(self) -> None:
         self.line_parsers = [
-            OperatorParser()
+            OperatorParser(),
+            ConditionalParser(),
         ]
         super().__init__()
 
@@ -39,6 +40,7 @@ class ExecutableParser(BlockParser):
                 parsed_object = line_parser.parse(block)
                 if parsed_object is not None:
                     parsed_objects.append(parsed_object)
+                    break
 
         parsed_block = ExecutableParsedBlock(parsed_objects)
         return parsed_block
