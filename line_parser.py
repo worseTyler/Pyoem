@@ -1,5 +1,6 @@
 from typing import List
 from block_parser import ParsedBlock
+from operations import Operations
 from util import Util
 
 class ParsedObject():
@@ -18,13 +19,14 @@ class LineParser():
         pass
 
 class ParsedOperator(ParsedObject):
+
     def __init__(self, operation_token: str, operands: List[str]) -> None:
         self.operation_token = operation_token
         self.operands = operands
         self.operation_dict = {
-            3: "store",
-            4: "cache",
-            5: "add"
+            3: Operations.store,
+            4: Operations.cache,
+            5: Operations.add
         }
     
     def execute(self, var_store: dict) -> None:
@@ -32,13 +34,8 @@ class ParsedOperator(ParsedObject):
         if operation_length not in self.operation_dict:
             raise SyntaxError(f"Why do you think {self.operation_token} qualifies as literature")
         operation_function = self.operation_dict[operation_length]
-        
-        evaluated_operands = []
-        for operand in self.operands:
-            evaluated_operands.append(Util.eval_operand(operand, var_store))
-
-        print(operation_function)
-        print(evaluated_operands)
+        operation_function(self.operands, var_store)
+        # print(evaluated_operands)
         
 
 class OperatorParser(LineParser):
@@ -52,8 +49,10 @@ class OperatorParser(LineParser):
             return None
 
         operation_token = current_line.split(' ')[-1].strip('!')
-        operands = current_line.replace(operation_token + '!', '')
+        operands = current_line.replace(operation_token + '!', '').strip()
+        
         operands = operands.strip().split(',')
+        operands = list(map(lambda string: string.strip(), operands))
 
         return ParsedOperator(operation_token, operands)
 
@@ -66,11 +65,12 @@ if __name__ == "__main__":
     opParser = OperatorParser()
     args = [
             ["saltly, quack var!"],
-            ["quack, fish fish!"],  
-            ["-tyler"]
+            ["quack fish!"],
+            ["one, three fiver!"]  
         ]
     for arg in args:
         store = {"quack": 56}
         parsedOperator = opParser.parse(arg)
         if parsedOperator is not None:
             parsedOperator.execute(store)
+            print(store)
