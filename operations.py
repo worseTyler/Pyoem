@@ -4,14 +4,12 @@ from util import Util
 
 class Operations():
     def store(operands: List[str], var_store: dict):
-        print(operands)
         if len(operands) != 2:
             raise SyntaxError("HOW DARE YOU")
 
         var_store[operands[0]] = Util.eval_operand(operands[1], var_store)
 
     def cache(operands: List[str], var_store: dict):
-        print(operands)
         if len(operands) != 1:
             raise SyntaxError("HOW DARE YOU")
 
@@ -61,5 +59,53 @@ class Operations():
             raise SyntaxError("HOW DARE YOU")
         
         operands = Operations.setup_operands(operands, var_store)
+
         var_store["last_value"] = operands[0] == operands[1]
+
+    def greater(operands: List[str], var_store: dict):
+        if len(operands) != 1 and len(operands) != 2:
+            raise SyntaxError("HOW DARE YOU")
         
+        operands = Operations.setup_operands(operands, var_store)
+        var_store["last_value"] = operands[0] > operands[1]
+
+    def less(operands: List[str], var_store: dict):
+        if len(operands) != 1 and len(operands) != 2:
+            raise SyntaxError("HOW DARE YOU")
+        
+        operands = Operations.setup_operands(operands, var_store)
+        var_store["last_value"] = operands[0] < operands[1]
+
+    def negate(operands: List[str], var_store: dict):
+        if len(operands) != 1 and len(operands) != 2:
+            raise SyntaxError("HOW DARE YOU")
+        
+        if len(operands) == 0:
+            operands.append(operands[0])
+            operands[0] = "last_value"    
+
+        operands[0] = Util.eval_operand(operands[0], var_store)
+
+        var_store["last_value"] = not operands[0] 
+
+    def op_and(operands: List[str], var_store: dict):
+        if len(operands) != 1 and len(operands) != 2:
+            raise SyntaxError("HOW DARE YOU")
+        
+        operands = Operations.setup_operands(operands, var_store)
+        var_store["last_value"] = operands[0] and operands[1]
+
+    def op_or(operands: List[str], var_store: dict):
+        if len(operands) != 1 and len(operands) != 2:
+            raise SyntaxError("HOW DARE YOU")
+        
+        operands = Operations.setup_operands(operands, var_store)
+        var_store["last_value"] = operands[0] or operands[1]
+        
+
+
+# equals
+# greater
+# less
+# not
+# or and        
