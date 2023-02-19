@@ -66,7 +66,7 @@ class Pyoem():
 
 if __name__ == "__main__":
     pyoem = Pyoem()
-    pyoem.load_file("./test.txt")
+    pyoem.load_file("./tictactoe.txt")
     pyoem.parse_blocks()
     pyoem.execute_blocks()
     pyoem.printStore()

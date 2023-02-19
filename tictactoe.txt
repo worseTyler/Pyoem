@@ -1,0 +1,352 @@
+'1'
+-one
+
+'2'
+-two
+
+'3'
+-three
+
+'4'
+-four
+
+'5'
+-five
+
+'6'
+-six
+
+'7'
+-seven
+
+'8'
+-eight
+
+'9'
+-nine
+
+'-'
+-a1
+
+'-'
+-a2
+
+'-'
+-a3
+
+'-'
+-a4
+
+'-'
+-a5
+
+'-'
+-a6
+
+'-'
+-a7
+
+'-'
+-a8
+
+'-'
+-a9
+
+'123456789'
+-rounds
+
+True
+-gamegoing
+
+0
+-false
+
+'thing'
+-userInput
+
+'x'
+-usersToken
+
+'X Wins'
+-xWin
+
+'O Wins'
+-oWin
+
+'Tie Game!'
+-winMessage
+
+'x'
+-x
+
+'o'
+-o
+
+0
+-previousCheck
+
+il
+-intOne
+
+i
+-intZero
+
+ill
+-intTwo
+
+
+for...
+index round rounds
+gamegoing, save!
+if?
+userInput, 1234567!
+one, userInput, equalsThing12!
+conditional?
+a1, usersToken, save!
+end if.
+two, userInput, equalsThing12!
+conditional?
+a2, usersToken, save!
+end if.
+three, userInput, equalsThing12!
+conditional?
+a3, usersToken, save!
+end if.
+four, userInput, equalsThing12!
+conditional?
+a4, usersToken, save!
+end if.
+five, userInput, equalsThing12!
+conditional?
+a5, usersToken, save!
+end if.
+six, userInput, equalsThing12!
+conditional?
+a6, usersToken, save!
+end if.
+seven, userInput, equalsThing12!
+conditional?
+a7, usersToken, save!
+end if.
+eight, userInput, equalsThing12!
+conditional?
+a8, usersToken, save!
+end if.
+nine, userInput, equalsThing12!
+conditional?
+a9, usersToken, save!
+end if.
+a1, a2, i am add!
+a3, i am add!
+boards!
+a4, a5, i am add!
+a6, i am add!
+boards!
+a7, a8, i am add!
+a9, i am add!
+boards!
+a1, x, equalsThing12!
+if not dash?
+a1, a2, equalsThing12!
+previousCheck, cache!
+a2, a3, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, xWin, save!
+end check.
+end dash check.
+a4, x, equalsThing12!
+if not dash?
+a4, a5, equalsThing12!
+previousCheck, cache!
+a5, a6, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, xWin, save!
+end check.
+end dash check.
+a7, x, equalsThing12!
+if not dash?
+a7, a8, equalsThing12!
+previousCheck, cache!
+a8, a9, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, xWin, save!
+end check.
+end dash check.
+a1, x, equalsThing12!
+if not dash?
+a1, a4, equalsThing12!
+previousCheck, cache!
+a4, a7, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, xWin, save!
+end check.
+end dash check.
+a2, x, equalsThing12!
+if not dash?
+a2, a5, equalsThing12!
+previousCheck, cache!
+a5, a8, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, xWin, save!
+end check.
+end dash check.
+a3, x, equalsThing12!
+if not dash?
+a3, a6, equalsThing12!
+previousCheck, cache!
+a6, a9, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, xWin, save!
+end check.
+end dash check.
+a1, x, equalsThing12!
+if not dash?
+a1, a5, equalsThing12!
+previousCheck, cache!
+a5, a9, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, xWin, save!
+end check.
+end dash check.
+a7, x, equalsThing12!
+if not dash?
+a7, a5, equalsThing12!
+previousCheck, cache!
+a5, a3, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, xWin, save!
+end check.
+end dash check.
+a1, o, equalsThing12!
+if not dash?
+a1, a2, equalsThing12!
+previousCheck, cache!
+a2, a3, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, oWin, save!
+end check.
+end dash check.
+a4, o, equalsThing12!
+if not dash?
+a4, a5, equalsThing12!
+previousCheck, cache!
+a5, a6, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, oWin, save!
+end check.
+end dash check.
+a7, o, equalsThing12!
+if not dash?
+a7, a8, equalsThing12!
+previousCheck, cache!
+a8, a9, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, oWin, save!
+end check.
+end dash check.
+a1, o, equalsThing12!
+if not dash?
+a1, a4, equalsThing12!
+previousCheck, cache!
+a4, a7, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, oWin, save!
+end check.
+end dash check.
+a2, o, equalsThing12!
+if not dash?
+a2, a5, equalsThing12!
+previousCheck, cache!
+a5, a8, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, oWin, save!
+end check.
+end dash check.
+a3, o, equalsThing12!
+if not dash?
+a3, a6, equalsThing12!
+previousCheck, cache!
+a6, a9, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, oWin, save!
+end check.
+end dash check.
+a1, o, equalsThing12!
+if not dash?
+a1, a5, equalsThing12!
+previousCheck, cache!
+a5, a9, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, oWin, save!
+end check.
+end dash check.
+a7, o, equalsThing12!
+if not dash?
+a7, a5, equalsThing12!
+previousCheck, cache!
+a5, a3, equalsThing12!
+previousCheck, tis is an and pls!
+won?
+gamegoing, i, save!
+'Game Ended', hoorah!
+winMessage, oWin, save!
+end check.
+end dash check.
+index, intTwo, this is mods!
+intZero, equalsThing12!
+if should be x?
+usersToken, o, save!
+end swap token.
+index, intTwo, this is mods!
+intOne, equalsThing12!
+if should be o?
+usersToken, x, save!
+end swap token.
+end if game going.
+end for the for.
+winMessage, hoorah!
