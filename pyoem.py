@@ -1,5 +1,8 @@
 
-from block_parser import DeclarationParser, ExecutableParser
+
+from BlockParsers.DeclarationParser import DeclarationParser
+from BlockParsers.ExecutableParser import ExecutableParser
+
 
 class Pyoem():
     def __init__(self) -> None:

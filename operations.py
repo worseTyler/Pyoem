@@ -101,11 +101,3 @@ class Operations():
         
         operands = Operations.setup_operands(operands, var_store)
         var_store["last_value"] = operands[0] or operands[1]
-        
-
-
-# equals
-# greater
-# less
-# not
-# or and        
