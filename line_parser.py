@@ -97,6 +97,7 @@ class ConditionalParser(LineParser):
                     break
         block.pop(0)
         parsed_object = ParsedConditional(internal_logic)
+        return parsed_object
 
 
 class LineParserHolder():
@@ -141,7 +142,7 @@ if __name__ == "__main__":
             # ("Collin, fish fiver!", {'last_value': 3}), # or
             # ("Collin, fish fiver!", {'last_value': 3}), # and
         ]
-        
+
         for test in tests:
             opParser = OperatorParser()
             parsedOperator = opParser.parse([test[0]])
@@ -154,3 +155,22 @@ if __name__ == "__main__":
                 print(f"Result: {expected == test[1]}\n\n")
     
     # tests_operations()
+
+    def tests_conditional():
+            tests = [
+                (["Condition?", "result, fishy, yum!", "It can be anything."], {'last_value': True}, {'result': 4, 'last_value': True}), # true case
+                (["Condition?", "result, fishy, yum!", "It can be anything."], {'last_value': False}, {'last_value': False}), # false case
+            ]
+            
+            for test in tests:
+                opParser = ConditionalParser()
+                parsed_object = opParser.parse(test[0])
+                if parsed_object is not None:
+                    expected = copy.deepcopy(test[2])
+                    parsed_object.execute(test[1])
+
+                    print("START")
+                    print(test[1])
+                    print(f"Result: {expected == test[1]}\n\n")
+        
+    tests_conditional()
