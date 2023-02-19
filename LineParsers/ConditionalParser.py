@@ -16,7 +16,7 @@ class ConditionalParser(LineParser):
 
         block.pop(0)
         internal_logic = []
-        while not block[0].strip().endswith('.') and not block[0].strip().endswith('...'):
+        while not block[0].strip().endswith('.') or block[0].strip().endswith('...'):
             for line_parser in line_parsers:
                 parsed_object = line_parser.parse(block, line_parsers)
                 if parsed_object is not None:

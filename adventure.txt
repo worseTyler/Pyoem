@@ -4,18 +4,94 @@
 0
 -hasWon
 
+01
+-playerRoom
+
+'key',
+'table',
+-room1Items
+
+'strange painting',
+'sleeping mat',
+-room2Items
+
+'locked door',
+'moss-covered wall',
+-room3Items
+
+HANDLE MOVEMENT
+handle, 'move left', is equivalent!
+if?
+playerRoom, 01, is equivalent!
+if?
+playerRoom, 0, stor!
+end block.
+playerRoom, 012, is equivalent!
+if?
+playerRoom, 01, stor!
+end block.
+end block.
+handle, 'move right', is equivalent!
+if?
+playerRoom, 01, is equivalent!
+if?
+playerRoom, 012, stor!
+end block.
+playerRoom, 0, is equivalent!
+if?
+playerRoom, 01, stor!
+end block.
+end block.
+
+GIVE WARNINGS
+give, 012345, is equivalent!
+if?
+'You hear a distant rumbling', prints!
+end block.
+give, 01 0, is equivalent!
+if?
+'The room shakes ominously around you.', prints!
+end block.
+give, 01 012345, is equivalent!
+if?
+'The room shakes violently on all sides!', prints!
+end block.
+
+SEARCH ROOM
+search, 'search room', is equivalent!
+if?
+playerRoom, 0, is equivalent!
+if?
+roomItems, room1Items, stor!
+end block.
+playerRoom, 01, is equivalent!
+if?
+roomItems, room2Items, stor!
+end block.
+playerRoom, 012, is equivalent!
+if?
+roomItems, room3Items, stor!
+end block.
+For...
+itemList roomItems
+itemList, prints!
+end for.
+end if.
+
 For...
 index value timerString
 0123456!
-012345!
+playerInput, cache!
+"playerInput, nonsense" (Handle Movement)
+"index, nonsense" (Give Warnings)
+"playerInput, nonsense" (Search Room)
 End block.
 
 hasWon, stor!
 if?
 'Conglaturations', prints!
 end block.
-hasWon, number, stor!
-hasWon, stor!
+hasWon, negate this word!
 if?
 'Failure', prints!
 end block.
