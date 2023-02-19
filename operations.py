@@ -127,3 +127,13 @@ class Operations():
             operands.append('last_value')
 
         var_store[operands[0]] = input(": ")
+
+    def index(operands: List[str], var_store: dict):
+        if len(operands) not in [1,2]:
+            raise SyntaxError("HOW DARE YOU")
+        
+        if len(operands) == 1:
+            operands.insert('last_value', 0)
+
+        list_index = Util.eval_operand(operands[1], var_store)
+        var_store['last_value'] = var_store[operands[0].strip()][list_index]
