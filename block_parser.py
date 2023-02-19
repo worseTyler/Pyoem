@@ -1,4 +1,5 @@
 from typing import List
+from line_parser import OperatorParser
 from util import Util
 
 class ParsedBlock():
@@ -15,12 +16,33 @@ class BlockParser():
     def parse(self, block: List[str]) -> ParsedBlock:
         pass
 
-class ExecutableBlockParser(BlockParser):
+class ExecutableParsedBlock(ParsedBlock):
+    def __init__(self, parsed_objects) -> None:
+        self.parsed_objects = parsed_objects
+        super().__init__()
+
+    def execute(self, var_store: dict) -> None:
+        for parsed_object in self.parsed_objects:
+            parsed_object.execute(var_store)
+
+class ExecutableParser(BlockParser):
     def __init__(self) -> None:
+        self.line_parsers = [
+            OperatorParser()
+        ]
         super().__init__()
 
     def parse(self, block: List[str]) -> ParsedBlock:
-        pass
+        parsed_objects = []
+        while len(block) > 0:
+            for line_parser in self.line_parsers:
+                parsed_object = line_parser.parse(block)
+                if parsed_object is not None:
+                    parsed_objects.append(parsed_object)
+
+        parsed_block = ExecutableParsedBlock(parsed_objects)
+        return parsed_block
+            
 
 class DeclarationParsedBlock(ParsedBlock):
     def __init__(self, value, name) -> None:
@@ -62,23 +84,41 @@ class DeclarationParser(BlockParser):
         return block
         
 if __name__ == "__main__":
+    # tests = [
+    #     ['alphabet,', 'numeral,', '-Tyler'],
+    #     ['alphabet,', '-Tyler'],
+    #     ["'alphabet',", '-Tyler']
+    # ]
+
+    # for test in tests:
+    #     print("Start Test")
+
+    #     var_store = {}
+    #     declarationParser = DeclarationParser(test)
+    #     block = declarationParser.parse()
+    #     var_store = block.execute(var_store)
+    #     print(var_store)   
+
+    #     print("End Test\n") 
+
+    
     tests = [
-        ['alphabet,', 'numeral,', '-Tyler'],
-        ['alphabet,', '-Tyler'],
-        ["'alphabet',", '-Tyler']
-    ]
+            [
+                'one, fish fiver!',
+                'fish fish!'
+                ]
+        ]
 
     for test in tests:
         print("Start Test")
 
         var_store = {}
-        declarationParser = DeclarationParser(test)
-        block = declarationParser.parse()
-        var_store = block.execute(var_store)
-        print(var_store)   
+        parser = ExecutableParser()
+        block = parser.parse(test)
+        block.execute(var_store)
+        print(var_store)
 
-        print("End Test\n") 
-
+        print("End Test\n")
         
         
 

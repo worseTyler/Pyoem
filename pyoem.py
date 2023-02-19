@@ -1,6 +1,5 @@
 
-from block_parser import DeclarationParser
-
+from block_parser import DeclarationParser, ExecutableParser
 
 class Pyoem():
     def __init__(self) -> None:
@@ -9,6 +8,11 @@ class Pyoem():
         self.raw_lines = []
         self.blocks = []
         self.parsed_blocks = []
+
+        self.block_parsers = [
+            DeclarationParser(),
+            ExecutableParser()
+        ]
 
 
     def load_file(self, file_name):
@@ -31,10 +35,11 @@ class Pyoem():
 
     def parse_blocks(self):
         for block in self.blocks:
-            parser = DeclarationParser()
-            parsedBlock = parser.parse(block)
-            if parsedBlock is not None:
-                self.parsed_blocks.append(parsedBlock)
+            for parser in self.block_parsers:
+                parsedBlock = parser.parse(block)
+                if parsedBlock is not None:
+                    self.parsed_blocks.append(parsedBlock)
+                    break
 
     def execute_blocks(self):
         for parsedBlock in self.parsed_blocks:

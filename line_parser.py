@@ -1,5 +1,4 @@
 from typing import List
-from block_parser import ParsedBlock
 from operations import Operations
 from util import Util
 
@@ -54,7 +53,11 @@ class OperatorParser(LineParser):
         operands = operands.strip().split(',')
         operands = list(map(lambda string: string.strip(), operands))
 
-        return ParsedOperator(operation_token, operands)
+        parsedOperator = ParsedOperator(operation_token, operands)
+
+        block = block.pop(0)
+
+        return parsedOperator
 
 
 class LineParserHolder():
@@ -66,10 +69,14 @@ if __name__ == "__main__":
     args = [
             ["saltly, quack var!"],
             ["quack fish!"],
-            ["one, three fiver!"]  
+            ["one, three fiver!"],
+            ["three fiver!"]  
         ]
     for arg in args:
-        store = {"quack": 56}
+        store = {
+            "quack": 56,
+            "last_value": 4
+        }
         parsedOperator = opParser.parse(arg)
         if parsedOperator is not None:
             parsedOperator.execute(store)
