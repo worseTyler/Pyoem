@@ -1,0 +1,21 @@
+'turn timer string'
+-timerString
+
+0
+-hasWon
+
+For...
+index value timerString
+0123456!
+012345!
+End block.
+
+hasWon, stor!
+if?
+'Conglaturations', prints!
+end block.
+hasWon, number, stor!
+hasWon, stor!
+if?
+'Failure', prints!
+end block.
