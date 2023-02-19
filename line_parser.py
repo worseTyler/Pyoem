@@ -15,7 +15,7 @@ class LineParser():
     def __init__(self) -> None:
         pass
 
-    def parse(block: List[str]) -> ParsedObject:
+    def parse(self, block: List[str]) -> ParsedObject:
         pass
 
 class ParsedOperator(ParsedObject):
@@ -56,12 +56,10 @@ class OperatorParser(LineParser):
         if not current_line.strip().endswith('!'):
             # this is not an operator
             return None
-
-        operation_token = current_line.split(' ')[-1].strip('!')
-        operands = current_line.replace(operation_token + '!', '').strip()
         
-        operands = operands.strip().split(',')
-        operands = list(map(lambda string: string.strip(), operands))
+        operands = current_line.strip().split(',')
+        operation_token = operands[-1].rstrip("!").strip()
+        operands = list(map(lambda string: string.strip(), operands[:-1]))
 
         parsedOperator = ParsedOperator(operation_token, operands)
 
@@ -69,10 +67,43 @@ class OperatorParser(LineParser):
 
         return parsedOperator
 
+class ParsedConditional(ParsedObject):
+    def __init__(self, internal_logic: List) -> None:
+        self.internal_logic = internal_logic
+    
+    def execute(self, var_store: dict) -> None:
+        if var_store['last_value']:
+            for parsed_object in self.internal_logic:
+                parsed_object.execute(var_store)
+
+class ConditionalParser(LineParser):
+
+    def __init__(self) -> None:
+        pass
+    
+    def parse(self, block: List[str]) -> ParsedObject:
+        current_line = block[0]
+        if not current_line.strip().endswith('?'):
+            #This is not a conditional
+            return None
+
+        block.pop(0)
+        internal_logic = []
+        while not block[0].strip().endswith('.'):
+            for line_parser in LineParserHolder.line_parsers:
+                parsed_object = line_parser.parse(block)
+                if parsed_object is not None:
+                    internal_logic.append(parsed_object)
+                    break
+        block.pop(0)
+        parsed_object = ParsedConditional(internal_logic)
+
 
 class LineParserHolder():
-    def __init__(self, lineParsers: List[LineParser]) -> None:
-        self.lineParsers = lineParsers
+    line_parsers = [
+        OperatorParser(),
+        ConditionalParser(),
+    ]
 
 if __name__ == "__main__":
     # opParser = OperatorParser()
@@ -110,6 +141,7 @@ if __name__ == "__main__":
             # ("Collin, fish fiver!", {'last_value': 3}), # or
             # ("Collin, fish fiver!", {'last_value': 3}), # and
         ]
+        
         for test in tests:
             opParser = OperatorParser()
             parsedOperator = opParser.parse([test[0]])
