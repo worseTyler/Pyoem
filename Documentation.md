@@ -2,7 +2,7 @@
 
 ## Team 4 People (Tyler, Collin, Nick, Anna)
 
-Pyoem is a new programming language created during the 2023 WSU Hackathon. It provides the option for developers to write their projects in Poems. Operators, Declarations, and Function Calls are all supported. The language is potentially Turing Complete upon initial evaluation.
+Pyoem is a new programming language created during the 2023 WSU Hackathon. It provides the option for developers to write their projects in Poems. Operators, Declarations, and Function Calls are all supported.
 
 
 
