@@ -1,5 +1,5 @@
-'turn timer string'
--timerString
+'I hear the echoes'
+-Rivers
 
 0
 -hasWon
@@ -13,15 +13,15 @@
 01
 -playerRoom
 
-'key on a table',
-'an old wardrobe',
+'There lies on a wooden table, a silver key.',
+'In the corner sits a half-rotted wardrobe, smelling of must.',
 -room1Items
 
-'an empty table',
-'an old wardrobe',
+'There is a wooden table on the verge of collapse. The key that sat on it is now in your pocket.',
+'In the corner sits a half-rotted wardrobe, smelling of must.',
 -room1ItemsNoKey
 
-'The first room'
+'A sliver of light creeps into the box-like room through a tiny crack in the ceiling.'
 -room1Des
 
 'The second room'
@@ -143,7 +143,7 @@ room3Des, prints!
 end if.
 
 For...
-index value timerString
+index value Rivers
 hasWon, negate this word!
 if?
 "playerRoom, nonsense" (Room Description)
