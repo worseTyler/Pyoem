@@ -4,6 +4,12 @@
 0
 -hasWon
 
+0
+-hasKey
+
+0
+-doorUnlocked
+
 01
 -playerRoom
 
@@ -78,6 +84,31 @@ itemList, prints!
 end for.
 end if.
 
+SPECIAL INTERACTIONS
+special, 'get key', is equivalent!
+if?
+playerRoom, 0, is equivalent!
+if?
+hasKey, 01, stor!
+end if.
+end if.
+special, 'unlock door', is equivalent!
+if?
+playerRoom, 012, is equivalent!
+hasKey, this is an anding!
+if?
+doorUnlocked, 01, stor!
+end if.
+end if.
+special, 'escape', is equivalent!
+if?
+playerRoom, 012, is equivalent!
+doorUnlocked, this is an anding!
+if?
+hasWon, 01, stor!
+end if.
+end if.
+
 For...
 index value timerString
 0123456!
@@ -85,6 +116,7 @@ playerInput, cache!
 "playerInput, nonsense" (Handle Movement)
 "index, nonsense" (Give Warnings)
 "playerInput, nonsense" (Search Room)
+"playerInput, nonsense" (Special Interactions)
 End block.
 
 hasWon, stor!
