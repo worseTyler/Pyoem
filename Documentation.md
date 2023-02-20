@@ -14,14 +14,12 @@ Pyoem is a new programming language created during the 2023 WSU Hackathon. It pr
 
 ## Numbers
 
-In Pyoem numbers are evaluated as the length of the word or phase provided -1.
+In Pyoem, each digit is evaluated as the length of the word - 1. Multidigit number are expressed by multiple words that correspond to each digit.
 
 | Pyoem     | Meaning |
 | --------- | ------- |
 | apple     | 4       |
 | apple pie | 42      |
-
-
 
 ## User Defined  Variables
 
