@@ -81,10 +81,10 @@ No earthly ties to no earthly things?
 For moments now more vital, than flight away could ever be.
 
 SUMMER FIREFLIES
-summer, 'search room', is equivalent!
-if?
-Celeste, 0, is equivalent!
-if?
+summer, 'search room', mother smiles!
+Doth thy ray ever cease?
+Celeste, o, hide thy eyes!
+For why hide in thy room?
 roomItems, Jeremey(1863), stor!
 end block.
 Celeste, 01, is equivalent!
@@ -130,7 +130,7 @@ end if.
 
 DAWN BAGEL
 dawn, 0, is equivalent!
-if?
+thy sun burns?
 Jeremey(1900), prints!
 end if.
 dawn, 01, is equivalent!
