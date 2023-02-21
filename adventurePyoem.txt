@@ -82,86 +82,86 @@ For moments now more vital, than flight away could ever be.
 
 SUMMER FIREFLIES
 summer, 'search room', mother smiles!
-Doth thy ray ever cease?
-Celeste, o, hide thy eyes!
-For why hide in thy room?
-roomItems, Jeremey(1863), stor!
-end block.
-Celeste, 01, is equivalent!
-if?
-roomItems, Celeste(1768), stor!
-end block.
-Celeste, 012, is equivalent!
-if?
-roomItems, Gabrin(1984), stor!
-end block.
-For...
-itemList roomItems
-itemList, prints!
-end for.
-end if.
+Then may I see the fireflies?
+Celeste, o, why the hurry!
+Will they not flee soon?
+soon, Jeremey(1863), said!
+Jeremey not another word.
+Celeste, lo, relax my dear!
+Mother will I never see the summer lights?
+soon, Celeste(1768), soon!
+Thy wonder does thee well.
+Celeste, see, fireflies now!
+Mother will they ever lose their fire?
+soon, Gabrin(1984), soon!
+Gabrin not a word out of you either.
+Celeste you must tell the fireflies good night...
+how soon
+how, mother!
+Just say good night to the summer fireflies.
+Good Night Summer Fireflies.
 
 SOFT CLOUDS
-soft, 'get key', is equivalent!
-if?
-Celeste, 0, is equivalent!
-if?
-Keeling, 01, stor!
-Jeremey(1863), Jeremey(1873), stor!
-end if.
-end if.
-soft, 'unlock door', is equivalent!
-if?
-Celeste, 012, is equivalent!
-Keeling, this is an anding!
-if?
-Mora, 01, stor!
-Gabrin(1984), Gabrin(1990), stor!
-end if.
-end if.
-soft, 'escape', is equivalent!
-if?
-Celeste, 012, is equivalent!
-Mora, this is an anding!
-if?
-Phineas, 01, stor!
-end if.
-end if.
+soft, 'get key', dreams called!
+Could I fly to find you?
+Celeste, o, fly in dreams!
+Doth the ground keep ties to thee?
+Keeling, lo, sees!
+Jeremey(1863), Jeremey(1873), sees!
+The clouds look soft.
+Celeste can only see never touch.
+soft, 'unlock door', Celeste dream!
+Celeste?
+Celeste, thy, mind wandered!
+Keeling, woke you in class!
+Have you paid attention?
+Mora, lo, nope!
+Gabrin(1984), Gabrin(1990), nope!
+Celeste you must pay attention.
+Celeste keep your head out of the clouds.
+soft, 'escape', cry to clouds!
+Can I keep my mind out of the clouds?
+Celeste, woa, thy grounding!
+Mora, help Celeste grow!
+Celeste?
+Phineas, no, stop!
+Celeste listen the clouds are soft.
+Celeste listen but the ground is real.
 
 DAWN BAGEL
-dawn, 0, is equivalent!
-thy sun burns?
-Jeremey(1900), prints!
-end if.
-dawn, 01, is equivalent!
-if?
-Celeste(1773), prints!
-end if.
-dawn, 012, is equivalent!
-if?
-Gabrin(1972), prints!
-end if.
+dawn, o, thy breakfast!
+doth the day breaks?
+Jeremey(1900), saw it!
+I saw it.
+dawn, lo, the sun rises!
+Does the night find peace?
+Celeste(1773), saw it!
+She saw the night's rest.
+dawn, thy, rays brightens!
+Does the dawn dally?
+Gabrin(1972), cannot!
+The dawn always breaks its fast.
 
-For...
-index value Rivers
-Phineas, negate this word!
-if?
-"Celeste, nonsense" (Dawn Bagel)
-0123456!
-playerInput, cache!
-"playerInput, nonsense" (Water Falls)
-"index, nonsense" (Winged Flight)
-"playerInput, nonsense" (Summer Fireflies)
-"playerInput, nonsense" (Soft Clouds)
-End block.
-end if.
+My world rises with the sun...
+ground speckled Rivers
+Phineas, good morning doe!
+Did thy sleep refresh you?
+"Celeste, smiles" (Dawn Bagel)
+Greatly!
+Lovely, honey!
+"Lovely, smiles" (Water Falls)
+"ground, smiles" (Winged Flight)
+"Lovely, smiles" (Summer Fireflies)
+"Lovely, smiles" (Soft Clouds)
+The sun beckons us to greet the new day.
+Let us find its beauty once again.
 
-Phineas, stor!
-if?
-'You stumble out into the light and the open sun almost blinds you. You've escaped!', prints!
-'Turning around you watch as the strange cave collapses in on itself in a cloud of dust and rubble.', prints!
-end block.
-Phineas, negate this word!
-if?
-'The walls crack and break around you. Rocks fall and you are entombed forever in this strange place.', prints!
-end block.
+Phineas, dear!
+Where have you gone?
+'You stumble out into the light and the open sun almost blinds you. You've escaped!', I hope!
+'Turning around you watch as the strange cave collapses in on itself in a cloud of dust and rubble.', I hear!
+Phineas come back to me.
+Phineas, follow my voices!
+Please where are you?
+'The walls crack and break around you. Rocks fall and you are entombed forever in this strange place.', I fear!
+Silence is all that calls back.
