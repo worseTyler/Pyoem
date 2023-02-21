@@ -88,7 +88,7 @@ Pyoem supports the ability for developers to write their own functions and call 
 | Title          | ^(.*?[A-Z]){2,} | The title is made of at least 2 word that are all capitalized | FUNCTION CALL |
 | Internal Logic |                 | If the function is called, this line(s) will be executed.    |               |
 
-When calling a function the structure follows "parameter1, paramter2" (Function Call). The (Function Call) section references the function you made previously. The (Function Call) doesn't need to be capitalized here. The "parameter1, parameter2" indicates the list of parameters, for this example in the Function Call function, parameter1 maps to function and parameter 2 maps to call. 
+When calling a function the structure follows "parameter1, parameter2" (Function Call). The (Function Call) section references the function you made previously. The (Function Call) doesn't need to be capitalized here. The "parameter1, parameter2" indicates the list of parameters, for this example in the Function Call function, parameter1 maps to function and parameter 2 maps to call. 
 
 
 
