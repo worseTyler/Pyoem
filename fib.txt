@@ -1,19 +1,19 @@
 a
--first
+-Allison
 
 ba
--second
+-Josh
 
 'oneadadfasdfasdfasdfasdfasdfasdfasdfasdfasfasdfasdfasdfasfasdfasfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfadfasdfasdfasdfasdfasdfasdfasdfasdfsadfdsfasfdsadfasdfsdfadsfasfasdfasdfasdfadsfasdfasdfsdafasdfasdfsdafdagsdasdgasdagsdasdffdsadfafds'
--large
+-University
 
-first, hoorah!
-second, hoorah!
+Allison, hoorah!
+Josh, hoorah!
 
-for...
-item large
-first, second, i am add!
-hoorah!
-first, second, save!
-second, store!
-end.
+The leaves begin to fall...
+Autumn University
+Allison, Josh, eyes met!
+Leaves!
+Allison, Josh, sees!
+Josh, loves!
+Leaves fall.
