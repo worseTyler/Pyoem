@@ -3,7 +3,9 @@
 ## Team 4 People (Tyler, Collin, Nick, Anna)
 ## Crimson Code Hackathon 2023 1st Place
 
-Pyoem is a new programming language created during the 2023 WSU Hackathon. It provides the option for developers to write their projects in Poems. Operators, Declarations, and Function Calls are all supported.
+Pyoem is the newest esoteric programming language, created so that developers can write their projects in the syntax and diction of the great poets. Poems may contain references to poems by other authors, sole verses or stanzas. Pyoem is the best the intersection of programming and literature. Operators, Declarations, and Function Calls are all supported.
+
+Pyoem was created for WSU's 2023 Hackathon under the theme of "Try Something New".  
 
 ## Special  Terms
 
